@@ -3,13 +3,13 @@ import java.util.Date;
 import enums.TaskStatus;
 import enums.Priority;
 
-public class Task implements Comparable<Priority>{
+public class Task implements Comparable<Task>{
 
 	private String title;
 	private String description;
 	private TaskStatus status;
 	private Priority priority;
-	private Date dueDay;
+	private Date due;
 	private Task lessPriority;
 	private Task morePriority;
 	
@@ -17,6 +17,11 @@ public class Task implements Comparable<Priority>{
 		setTitle(title);
 		setStatus(TaskStatus.INPROGRESS);
 	}
+        
+        public Task(String title, Date due){
+            setTitle(title);
+            setStatus(TaskStatus.INPROGRESS);
+        }
 	
 	public String getTitle() {
 		return title;
@@ -49,12 +54,12 @@ public class Task implements Comparable<Priority>{
 		this.description = description;
 	}
 
-	public Date getDueDay() {
-		return dueDay;
+	public Date getDue() {
+		return due;
 	}
 
-	public void setDueDay(Date dueDay) {
-		this.dueDay = dueDay;
+	public void setDue(Date due) {
+		this.due = due;
 	}
 
 	public Task getLessPriority() {
@@ -74,9 +79,16 @@ public class Task implements Comparable<Priority>{
 	}
 
 	@Override
-	public int compareTo(Priority o) {
-		return this.compareTo(o);
+	public int compareTo(Task o) {
+		return this.getPriority().numerical.compareTo(o.getPriority().numerical);
 	}
 	
+        public void setDueDate(int year, int month, int day){
+            
+        }
+        
+        public void setDueDate(int year, int month, int day, int hrs, int mins){
+            
+        }
 }
 

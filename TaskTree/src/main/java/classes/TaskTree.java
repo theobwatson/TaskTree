@@ -1,28 +1,76 @@
 package classes;
 
-import enums.Priority;
-
 public class TaskTree {
 
-	Task data;
-	Task root;
+	private Task root;
+        private int numTasks;
 	
-	public TaskTree(Task data) {
-		this.data = data;
+	public TaskTree() {
 	}
 	
-	public void add(Task data) {
-		if(root == null) {
-			root = data;
-		} else if(root.compareTo(data) >= 0) {
-			add(data, root.getLessPriority());
-		} else {
-			root.setMorePriority(data);
-		}
+	public void add(Task newTask) {
+            if(root == null) {
+                root = newTask;
+                numTasks++;
+            } else {
+                add(root, newTask);
+            }
 	}
 	
-	public void add(Task data, Task root) {
-		
+	public void add(Task root, Task newTask) {
+            if (root.compareTo(newTask) >= 0){
+                if (root.getLessPriority() != null) {
+                    add(root.getLessPriority(), newTask);
+                } else {
+                    root.setLessPriority(newTask);
+                    numTasks++;
+                }
+            } else if (root.compareTo(newTask) < 0){
+                if (root.getMorePriority() != null) {
+                    add(root.getMorePriority(), newTask);
+                } else {
+                    root.setMorePriority(newTask);
+                    numTasks++;
+                }
+            }
 	}
-	
+        
+        // Returns tring of Task order (by Priority) 
+        public void traversal() {
+        traversal(root);
+        }
+
+        private void traversal(Task root) {
+         if (root != null) {
+            traversal(root.getMorePriority());
+            System.out.println(root.getTitle());
+            traversal(root.getLessPriority());
+            }
+        }
+        
+        
+        
+        public void remove(Task newTask){
+          if(root != null) {
+              remove(newTask, root);
+          }
+        }
+        
+        public void remove(Task root, Task newTask){
+          if (root.compareTo(newTask) >= 0){
+                if (root.getLessPriority() != null) {
+                    remove(root.getLessPriority(), newTask);
+                } else {
+                    root.setLessPriority(newTask);
+                    numTasks--;
+                }
+            } else if (root.compareTo(newTask) < 0){
+                if (root.getMorePriority() != null) {
+                    add(root.getMorePriority(), newTask);
+                } else {
+                    root.setMorePriority(newTask);
+                    numTasks++;
+                }
+            }
+        }
 }

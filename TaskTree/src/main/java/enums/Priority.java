@@ -2,15 +2,15 @@ package enums;
 
 public enum Priority {
 
-	VERYHIGH(1),
-	HIGH(2),
+	VERYHIGH(5),
+	HIGH(4),
 	MEDIUM(3),
-	LOW(4),
-	VERYLOW(5);
+	LOW(2),
+	VERYLOW(1);
 	
-	public int numerical;
+	public Integer numerical;
 	
-	Priority(int numerical){
+	Priority(Integer numerical){
 		this.numerical = numerical;
 	}
 }
