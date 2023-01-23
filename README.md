@@ -32,4 +32,4 @@ Push to the branch: git push origin new-feature
 Submit a pull request.
 
 # License
-TaskTree is licensed under the MIT License. See LICENSE for more information.
+TaskTree is licensed under the BSD-3-Clause License. See LICENSE for more information.
