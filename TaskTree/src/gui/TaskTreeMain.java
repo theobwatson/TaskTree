@@ -308,10 +308,15 @@ public class TaskTreeMain extends javax.swing.JFrame {
 
     private void markCompletedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_markCompletedButtonActionPerformed
         if(mainTree.user.getCurrentTask() != null){
-            CompletedTask window = new CompletedTask(mainTree);
-            window.show();
             this.mainTree.user.taskComplete();
             this.displayLeaves.setText(mainTree.user.getLeaves() + "");
+            
+            this.mainTree.completed.add(mainTree.user.getCurrentTask());
+            this.mainTree.remove(mainTree.user.getCurrentTask());
+            
+            CompletedTask window = new CompletedTask(mainTree);
+            window.show();
+            
         }
     }//GEN-LAST:event_markCompletedButtonActionPerformed
 

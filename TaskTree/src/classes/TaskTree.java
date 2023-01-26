@@ -8,7 +8,7 @@ public class TaskTree {
 	private Task root;
         private int numTasks;
         public User user;
-        private TaskTree completed;
+        public TaskTree completed;
         
 	
 	public TaskTree(String name) {
