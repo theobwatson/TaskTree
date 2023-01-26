@@ -23,6 +23,7 @@ public class TaskTreeMain extends javax.swing.JFrame {
         initComponents();
         WelcomeText.setText(name);
         this.mainTree = new TaskTree(name);
+        this.displayRanking.setText(mainTree.user.getRanking() + "");
         
     }
 
@@ -73,9 +74,9 @@ public class TaskTreeMain extends javax.swing.JFrame {
         displayLeaves.setFont(new java.awt.Font("Drm Handwritten Thin", 0, 48)); // NOI18N
         displayLeaves.setForeground(new java.awt.Color(255, 255, 255));
         displayLeaves.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        displayLeaves.setText("0 🌿");
+        displayLeaves.setText("0");
         getContentPane().add(displayLeaves);
-        displayLeaves.setBounds(20, 172, 140, 70);
+        displayLeaves.setBounds(10, 170, 150, 70);
 
         resetTreeButton.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         resetTreeButton.setForeground(new java.awt.Color(255, 222, 220));
@@ -249,6 +250,7 @@ public class TaskTreeMain extends javax.swing.JFrame {
         currentDescription.setForeground(new java.awt.Color(102, 102, 102));
         currentDescription.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         currentDescription.setText("[Description]");
+        currentDescription.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         currentDescription.setIconTextGap(0);
         currentDescription.setIgnoreRepaint(true);
         currentDescription.setMaximumSize(new java.awt.Dimension(141, 21));
@@ -305,7 +307,12 @@ public class TaskTreeMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void openCurrentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openCurrentButtonActionPerformed
-        // TODO add your handling code here:
+        if(mainTree.user.getCurrentTask() != null){
+            CompletedTask window = new CompletedTask(mainTree);
+            window.show();
+            this.mainTree.user.taskComplete();
+            this.displayLeaves.setText(mainTree.user.getLeaves() + "");
+        }
     }//GEN-LAST:event_openCurrentButtonActionPerformed
 
     private void seeMoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seeMoreButtonActionPerformed
