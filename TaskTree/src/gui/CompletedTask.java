@@ -21,7 +21,7 @@ public class CompletedTask extends javax.swing.JFrame {
     
     public CompletedTask(TaskTree tree) {
         initComponents();
-        this.displayLeaves.setText(tree.user.getLeaves() + "");
+        this.displayLeaves.setText(tree.user.priorityCheck() + tree.user.rankingCheck() + "");
     }
 
     /**
