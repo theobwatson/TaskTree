@@ -23,6 +23,7 @@ public class TaskTreeMain extends javax.swing.JFrame {
         initComponents();
         WelcomeText.setText(name);
         this.mainTree = new TaskTree(name);
+        this.displayRanking.setText(mainTree.user.getRanking() + "");
         
     }
 
@@ -49,10 +50,10 @@ public class TaskTreeMain extends javax.swing.JFrame {
         displayDue = new javax.swing.JLabel();
         nextDescription = new javax.swing.JLabel();
         openCurrentButton2 = new javax.swing.JButton();
+        markCompletedButton = new javax.swing.JButton();
+        changeToCurrentButton = new javax.swing.JButton();
+        editCurrentButton = new javax.swing.JButton();
         openCurrentButton = new javax.swing.JButton();
-        seeMoreButton3 = new javax.swing.JButton();
-        seeMoreButton = new javax.swing.JButton();
-        seeMoreButton1 = new javax.swing.JButton();
         currentDescription = new javax.swing.JLabel();
         currentTitle = new javax.swing.JLabel();
         MainTitle = new javax.swing.JLabel();
@@ -73,9 +74,9 @@ public class TaskTreeMain extends javax.swing.JFrame {
         displayLeaves.setFont(new java.awt.Font("Drm Handwritten Thin", 0, 48)); // NOI18N
         displayLeaves.setForeground(new java.awt.Color(255, 255, 255));
         displayLeaves.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        displayLeaves.setText("0 🌿");
+        displayLeaves.setText("0");
         getContentPane().add(displayLeaves);
-        displayLeaves.setBounds(20, 172, 140, 70);
+        displayLeaves.setBounds(10, 170, 150, 70);
 
         resetTreeButton.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         resetTreeButton.setForeground(new java.awt.Color(255, 222, 220));
@@ -191,64 +192,65 @@ public class TaskTreeMain extends javax.swing.JFrame {
         getContentPane().add(openCurrentButton2);
         openCurrentButton2.setBounds(20, 67, 140, 50);
 
-        openCurrentButton.setFont(new java.awt.Font("Courier New", 1, 16)); // NOI18N
+        markCompletedButton.setFont(new java.awt.Font("Courier New", 1, 16)); // NOI18N
+        markCompletedButton.setForeground(new java.awt.Color(255, 255, 255));
+        markCompletedButton.setText(" Mark completed");
+        markCompletedButton.setBorderPainted(false);
+        markCompletedButton.setContentAreaFilled(false);
+        markCompletedButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        markCompletedButton.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        markCompletedButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                markCompletedButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(markCompletedButton);
+        markCompletedButton.setBounds(310, 190, 190, 30);
+
+        changeToCurrentButton.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        changeToCurrentButton.setForeground(new java.awt.Color(255, 255, 255));
+        changeToCurrentButton.setText("Change to Current");
+        changeToCurrentButton.setBorderPainted(false);
+        changeToCurrentButton.setContentAreaFilled(false);
+        changeToCurrentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changeToCurrentButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(changeToCurrentButton);
+        changeToCurrentButton.setBounds(620, 326, 200, 30);
+
+        editCurrentButton.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        editCurrentButton.setForeground(new java.awt.Color(255, 255, 255));
+        editCurrentButton.setText("Edit");
+        editCurrentButton.setBorderPainted(false);
+        editCurrentButton.setContentAreaFilled(false);
+        editCurrentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editCurrentButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(editCurrentButton);
+        editCurrentButton.setBounds(620, 190, 90, 30);
+
+        openCurrentButton.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         openCurrentButton.setForeground(new java.awt.Color(255, 255, 255));
-        openCurrentButton.setText(" Mark completed");
+        openCurrentButton.setText("Open");
         openCurrentButton.setBorderPainted(false);
         openCurrentButton.setContentAreaFilled(false);
-        openCurrentButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        openCurrentButton.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         openCurrentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openCurrentButtonActionPerformed(evt);
             }
         });
         getContentPane().add(openCurrentButton);
-        openCurrentButton.setBounds(310, 190, 190, 30);
-
-        seeMoreButton3.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
-        seeMoreButton3.setForeground(new java.awt.Color(255, 255, 255));
-        seeMoreButton3.setText("Change to Current");
-        seeMoreButton3.setBorderPainted(false);
-        seeMoreButton3.setContentAreaFilled(false);
-        seeMoreButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                seeMoreButton3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(seeMoreButton3);
-        seeMoreButton3.setBounds(620, 326, 200, 30);
-
-        seeMoreButton.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
-        seeMoreButton.setForeground(new java.awt.Color(255, 255, 255));
-        seeMoreButton.setText("Edit");
-        seeMoreButton.setBorderPainted(false);
-        seeMoreButton.setContentAreaFilled(false);
-        seeMoreButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                seeMoreButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(seeMoreButton);
-        seeMoreButton.setBounds(620, 190, 90, 30);
-
-        seeMoreButton1.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
-        seeMoreButton1.setForeground(new java.awt.Color(255, 255, 255));
-        seeMoreButton1.setText("Open");
-        seeMoreButton1.setBorderPainted(false);
-        seeMoreButton1.setContentAreaFilled(false);
-        seeMoreButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                seeMoreButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(seeMoreButton1);
-        seeMoreButton1.setBounds(510, 190, 100, 30);
+        openCurrentButton.setBounds(510, 190, 100, 30);
 
         currentDescription.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         currentDescription.setForeground(new java.awt.Color(102, 102, 102));
         currentDescription.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         currentDescription.setText("[Description]");
+        currentDescription.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         currentDescription.setIconTextGap(0);
         currentDescription.setIgnoreRepaint(true);
         currentDescription.setMaximumSize(new java.awt.Dimension(141, 21));
@@ -304,17 +306,23 @@ public class TaskTreeMain extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void markCompletedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_markCompletedButtonActionPerformed
+        if(mainTree.user.getCurrentTask() != null){
+            CompletedTask window = new CompletedTask(mainTree);
+            window.show();
+            this.mainTree.user.taskComplete();
+            this.displayLeaves.setText(mainTree.user.getLeaves() + "");
+        }
+    }//GEN-LAST:event_markCompletedButtonActionPerformed
+
+    
+    private void editCurrentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editCurrentButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editCurrentButtonActionPerformed
+
     private void openCurrentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openCurrentButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_openCurrentButtonActionPerformed
-
-    private void seeMoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seeMoreButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_seeMoreButtonActionPerformed
-
-    private void seeMoreButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seeMoreButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_seeMoreButton1ActionPerformed
 
     private void deleteCurrentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCurrentButtonActionPerformed
         // TODO add your handling code here:
@@ -324,9 +332,9 @@ public class TaskTreeMain extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_viewAllButtonActionPerformed
 
-    private void seeMoreButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seeMoreButton3ActionPerformed
+    private void changeToCurrentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeToCurrentButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_seeMoreButton3ActionPerformed
+    }//GEN-LAST:event_changeToCurrentButtonActionPerformed
 
     private void openCurrentButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openCurrentButton2ActionPerformed
         // TODO add your handling code here:
@@ -372,6 +380,7 @@ public class TaskTreeMain extends javax.swing.JFrame {
     private javax.swing.JLabel MainTitle;
     private javax.swing.JButton TaskHistoryButton;
     private javax.swing.JLabel WelcomeText;
+    private javax.swing.JButton changeToCurrentButton;
     private javax.swing.JLabel currentDescription;
     private javax.swing.JLabel currentTask;
     private javax.swing.JLabel currentTitle;
@@ -380,7 +389,9 @@ public class TaskTreeMain extends javax.swing.JFrame {
     private javax.swing.JLabel displayLeaves;
     private javax.swing.JLabel displayRanking;
     private javax.swing.JLabel dueLabel;
+    private javax.swing.JButton editCurrentButton;
     private javax.swing.JButton helpButton;
+    private javax.swing.JButton markCompletedButton;
     private javax.swing.JButton myGrowthButton;
     private javax.swing.JLabel nextDescription;
     private javax.swing.JLabel nextTitle;
@@ -388,9 +399,6 @@ public class TaskTreeMain extends javax.swing.JFrame {
     private javax.swing.JButton openCurrentButton2;
     private javax.swing.JProgressBar rankProgress;
     private javax.swing.JButton resetTreeButton;
-    private javax.swing.JButton seeMoreButton;
-    private javax.swing.JButton seeMoreButton1;
-    private javax.swing.JButton seeMoreButton3;
     private javax.swing.JLabel upNext;
     private javax.swing.JLabel version;
     private javax.swing.JButton viewAllButton;
