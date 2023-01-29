@@ -26,23 +26,23 @@ public class AddTask extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        upNext1 = new javax.swing.JLabel();
-        upNext5 = new javax.swing.JLabel();
-        upNext6 = new javax.swing.JLabel();
-        upNext7 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        upNext4 = new javax.swing.JLabel();
-        upNext3 = new javax.swing.JLabel();
-        upNext2 = new javax.swing.JLabel();
-        upNext = new javax.swing.JLabel();
+        slashMonthLabel = new javax.swing.JLabel();
+        colonLabel = new javax.swing.JLabel();
+        addTaskButton = new javax.swing.JButton();
+        slashDayLabel = new javax.swing.JLabel();
+        descriptionText = new javax.swing.JTextField();
+        yearText = new javax.swing.JTextField();
+        minuteText = new javax.swing.JTextField();
+        hourText = new javax.swing.JTextField();
+        titleText = new javax.swing.JTextField();
+        dayText = new javax.swing.JTextField();
+        monthText = new javax.swing.JTextField();
+        descriptionLabel = new javax.swing.JLabel();
+        dateLabel = new javax.swing.JLabel();
+        timeLabel = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
         MainTitle = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        backgroundPNG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(747, 420));
@@ -50,131 +50,132 @@ public class AddTask extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(747, 423));
         getContentPane().setLayout(null);
 
-        upNext1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        upNext1.setForeground(new java.awt.Color(255, 255, 255));
-        upNext1.setText("Add New Task +");
-        getContentPane().add(upNext1);
-        upNext1.setBounds(290, 340, 160, 30);
+        slashMonthLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        slashMonthLabel.setForeground(new java.awt.Color(102, 102, 102));
+        slashMonthLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        slashMonthLabel.setText("/");
+        getContentPane().add(slashMonthLabel);
+        slashMonthLabel.setBounds(637, 100, 20, 20);
 
-        upNext5.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        upNext5.setForeground(new java.awt.Color(102, 102, 102));
-        upNext5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        upNext5.setText("/");
-        getContentPane().add(upNext5);
-        upNext5.setBounds(637, 100, 20, 20);
+        colonLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        colonLabel.setForeground(new java.awt.Color(102, 102, 102));
+        colonLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        colonLabel.setText(":");
+        getContentPane().add(colonLabel);
+        colonLabel.setBounds(430, 100, 20, 20);
 
-        upNext6.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        upNext6.setForeground(new java.awt.Color(102, 102, 102));
-        upNext6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        upNext6.setText(":");
-        getContentPane().add(upNext6);
-        upNext6.setBounds(430, 100, 20, 20);
+        addTaskButton.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        addTaskButton.setForeground(new java.awt.Color(255, 255, 255));
+        addTaskButton.setText("Add New Task +");
+        addTaskButton.setContentAreaFilled(false);
+        getContentPane().add(addTaskButton);
+        addTaskButton.setBounds(20, 330, 710, 50);
 
-        upNext7.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        upNext7.setForeground(new java.awt.Color(102, 102, 102));
-        upNext7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        upNext7.setText("/");
-        getContentPane().add(upNext7);
-        upNext7.setBounds(572, 100, 20, 20);
+        slashDayLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        slashDayLabel.setForeground(new java.awt.Color(102, 102, 102));
+        slashDayLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        slashDayLabel.setText("/");
+        getContentPane().add(slashDayLabel);
+        slashDayLabel.setBounds(572, 100, 20, 20);
 
-        jTextField7.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
-        jTextField7.setText("placeholder description");
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        descriptionText.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        descriptionText.setText("placeholder description");
+        descriptionText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                descriptionTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField7);
-        jTextField7.setBounds(28, 211, 690, 80);
+        getContentPane().add(descriptionText);
+        descriptionText.setBounds(28, 211, 690, 80);
 
-        jTextField4.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("2002");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        yearText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        yearText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        yearText.setText("2002");
+        yearText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                yearTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(660, 92, 60, 40);
+        getContentPane().add(yearText);
+        yearText.setBounds(660, 92, 60, 40);
 
-        jTextField1.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("45");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        minuteText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        minuteText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        minuteText.setText("45");
+        minuteText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                minuteTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(450, 92, 50, 40);
+        getContentPane().add(minuteText);
+        minuteText.setBounds(450, 92, 50, 40);
 
-        jTextField3.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setText("10");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        hourText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        hourText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        hourText.setText("10");
+        hourText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                hourTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(380, 92, 50, 40);
+        getContentPane().add(hourText);
+        hourText.setBounds(380, 92, 50, 40);
 
-        jTextField2.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
-        jTextField2.setText("placeholder title");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        titleText.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        titleText.setText("placeholder title");
+        titleText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                titleTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(28, 92, 320, 40);
+        getContentPane().add(titleText);
+        titleText.setBounds(28, 92, 320, 40);
 
-        jTextField5.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setText("26");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        dayText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        dayText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        dayText.setText("26");
+        dayText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                dayTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(530, 92, 40, 40);
+        getContentPane().add(dayText);
+        dayText.setBounds(530, 92, 40, 40);
 
-        jTextField6.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setText("09");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        monthText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        monthText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        monthText.setText("09");
+        monthText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                monthTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField6);
-        jTextField6.setBounds(595, 92, 40, 40);
+        getContentPane().add(monthText);
+        monthText.setBounds(595, 92, 40, 40);
 
-        upNext4.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        upNext4.setForeground(new java.awt.Color(255, 255, 255));
-        upNext4.setText("Description:");
-        getContentPane().add(upNext4);
-        upNext4.setBounds(30, 170, 140, 20);
+        descriptionLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        descriptionLabel.setForeground(new java.awt.Color(255, 255, 255));
+        descriptionLabel.setText("Description:");
+        getContentPane().add(descriptionLabel);
+        descriptionLabel.setBounds(30, 170, 140, 20);
 
-        upNext3.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        upNext3.setForeground(new java.awt.Color(255, 255, 255));
-        upNext3.setText("Date:");
-        getContentPane().add(upNext3);
-        upNext3.setBounds(535, 60, 140, 20);
+        dateLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        dateLabel.setForeground(new java.awt.Color(255, 255, 255));
+        dateLabel.setText("Date:");
+        getContentPane().add(dateLabel);
+        dateLabel.setBounds(535, 60, 140, 20);
 
-        upNext2.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        upNext2.setForeground(new java.awt.Color(255, 255, 255));
-        upNext2.setText("Time:");
-        getContentPane().add(upNext2);
-        upNext2.setBounds(390, 60, 110, 20);
+        timeLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        timeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        timeLabel.setText("Time:");
+        getContentPane().add(timeLabel);
+        timeLabel.setBounds(390, 60, 110, 20);
 
-        upNext.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        upNext.setForeground(new java.awt.Color(255, 255, 255));
-        upNext.setText("Title:");
-        getContentPane().add(upNext);
-        upNext.setBounds(30, 60, 140, 20);
+        titleLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(255, 255, 255));
+        titleLabel.setText("Title:");
+        getContentPane().add(titleLabel);
+        titleLabel.setBounds(30, 60, 140, 20);
 
         MainTitle.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
         MainTitle.setForeground(new java.awt.Color(167, 202, 177));
@@ -182,41 +183,41 @@ public class AddTask extends javax.swing.JFrame {
         getContentPane().add(MainTitle);
         MainTitle.setBounds(10, 0, 270, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/taskAdd.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -10, 750, 420);
+        backgroundPNG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/taskAdd.png"))); // NOI18N
+        backgroundPNG.setText("jLabel1");
+        getContentPane().add(backgroundPNG);
+        backgroundPNG.setBounds(0, -10, 750, 420);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void minuteTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minuteTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_minuteTextActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void titleTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titleTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_titleTextActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void hourTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hourTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_hourTextActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void yearTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_yearTextActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void dayTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_dayTextActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void monthTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monthTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_monthTextActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void descriptionTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descriptionTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_descriptionTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,21 +256,21 @@ public class AddTask extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel MainTitle;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JLabel upNext;
-    private javax.swing.JLabel upNext1;
-    private javax.swing.JLabel upNext2;
-    private javax.swing.JLabel upNext3;
-    private javax.swing.JLabel upNext4;
-    private javax.swing.JLabel upNext5;
-    private javax.swing.JLabel upNext6;
-    private javax.swing.JLabel upNext7;
+    private javax.swing.JButton addTaskButton;
+    private javax.swing.JLabel backgroundPNG;
+    private javax.swing.JLabel colonLabel;
+    private javax.swing.JLabel dateLabel;
+    private javax.swing.JTextField dayText;
+    private javax.swing.JLabel descriptionLabel;
+    private javax.swing.JTextField descriptionText;
+    private javax.swing.JTextField hourText;
+    private javax.swing.JTextField minuteText;
+    private javax.swing.JTextField monthText;
+    private javax.swing.JLabel slashDayLabel;
+    private javax.swing.JLabel slashMonthLabel;
+    private javax.swing.JLabel timeLabel;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JTextField titleText;
+    private javax.swing.JTextField yearText;
     // End of variables declaration//GEN-END:variables
 }
