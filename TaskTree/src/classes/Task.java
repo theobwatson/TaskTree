@@ -82,10 +82,11 @@ public class Task implements Comparable<Task> {
 
     @Override
     public int compareTo(Task o) {
-        if (o != null) {
-            return this.getPriority().numerical.compareTo(o.getPriority().numerical);
-        }
-        return 0;
+        return this.getPriority().numerical.compareTo(o.getPriority().numerical);
+    }
+
+    public int compareToTitle(Task o) {
+        return this.title.compareTo(o.title);
     }
 
     public void setDueDate(int year, int month, int day) {
@@ -94,5 +95,9 @@ public class Task implements Comparable<Task> {
 
     public void setDueDate(int year, int month, int day, int hrs, int mins) {
 
+    }
+    
+    public String toString(){
+        return title + "";
     }
 }

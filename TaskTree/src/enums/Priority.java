@@ -2,11 +2,11 @@ package enums;
 
 public enum Priority {
 
-	VERYHIGH(5),
-	HIGH(4),
+	VERYHIGH(1),
+	HIGH(2),
 	MEDIUM(3),
-	LOW(2),
-	VERYLOW(1);
+	LOW(3),
+	VERYLOW(5);
 	
 	public Integer numerical;
 	

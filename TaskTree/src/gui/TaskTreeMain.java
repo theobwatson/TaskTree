@@ -14,17 +14,19 @@ import enums.UserLevel;
 public class TaskTreeMain extends javax.swing.JFrame {
 
     public TaskTree mainTree;
-    
-    public TaskTreeMain(){
+
+    public TaskTreeMain() {
         initComponents();
     }
-    
+
     public TaskTreeMain(String name) {
         initComponents();
         WelcomeText.setText(name);
         this.mainTree = new TaskTree(name);
         this.displayRanking.setText(mainTree.user.getRanking() + "");
-        
+        this.rankProgress.setMaximum(mainTree.user.getRanking().leaves);
+        this.rankProgress.setValue(mainTree.user.getLeaves());
+
     }
 
     /**
@@ -307,20 +309,28 @@ public class TaskTreeMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void markCompletedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_markCompletedButtonActionPerformed
-        if(mainTree.user.getCurrentTask() != null){
+        if (mainTree.user.getCurrentTask() != null) {
+
+            // sets leaves using ranking
             this.mainTree.user.taskComplete();
+            // changes user leaves display
             this.displayLeaves.setText(mainTree.user.getLeaves() + "");
-            
+            // sets progress bar to new ranking and leaves
+            this.rankProgress.setMaximum(mainTree.user.getRanking().leaves);
+            this.rankProgress.setValue(mainTree.user.getLeaves());
+
+            // add completed task to completed bin tree
             this.mainTree.completed.add(mainTree.user.getCurrentTask());
-            this.mainTree.remove(mainTree.user.getCurrentTask());
-            
+            this.mainTree.removeTask(mainTree.user.getCurrentTask());
+
+            // open CompletedTask window
             CompletedTask window = new CompletedTask(mainTree);
             window.show();
-            
+
         }
     }//GEN-LAST:event_markCompletedButtonActionPerformed
 
-    
+
     private void editCurrentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editCurrentButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_editCurrentButtonActionPerformed
