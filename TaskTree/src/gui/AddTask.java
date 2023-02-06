@@ -47,7 +47,7 @@ public class AddTask extends javax.swing.JFrame {
         colonLabel = new javax.swing.JLabel();
         PriorityLabel = new javax.swing.JLabel();
         addTaskButton = new javax.swing.JButton();
-        PrioritySelection = new javax.swing.JComboBox<>(Priority.values());
+        PrioritySelection = new javax.swing.JComboBox<>();
         slashDayLabel = new javax.swing.JLabel();
         descriptionText = new javax.swing.JTextField();
         yearText = new javax.swing.JTextField();
@@ -101,13 +101,16 @@ public class AddTask extends javax.swing.JFrame {
         getContentPane().add(addTaskButton);
         addTaskButton.setBounds(20, 330, 710, 50);
 
+        PrioritySelection.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        PrioritySelection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Very High", "High", "Medium", "Low", "Very Low" }));
+        PrioritySelection.setToolTipText("");
         PrioritySelection.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrioritySelectionActionPerformed(evt);
             }
         });
         getContentPane().add(PrioritySelection);
-        PrioritySelection.setBounds(530, 210, 190, 40);
+        PrioritySelection.setBounds(530, 220, 190, 60);
 
         slashDayLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         slashDayLabel.setForeground(new java.awt.Color(102, 102, 102));
@@ -117,7 +120,6 @@ public class AddTask extends javax.swing.JFrame {
         slashDayLabel.setBounds(572, 100, 20, 20);
 
         descriptionText.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
-        descriptionText.setText("placeholder description");
         descriptionText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 descriptionTextActionPerformed(evt);
@@ -128,7 +130,6 @@ public class AddTask extends javax.swing.JFrame {
 
         yearText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         yearText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        yearText.setText("2002");
         yearText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 yearTextActionPerformed(evt);
@@ -139,7 +140,6 @@ public class AddTask extends javax.swing.JFrame {
 
         minuteText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         minuteText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        minuteText.setText("45");
         minuteText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 minuteTextActionPerformed(evt);
@@ -150,7 +150,6 @@ public class AddTask extends javax.swing.JFrame {
 
         hourText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         hourText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        hourText.setText("10");
         hourText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hourTextActionPerformed(evt);
@@ -160,7 +159,6 @@ public class AddTask extends javax.swing.JFrame {
         hourText.setBounds(380, 92, 50, 40);
 
         titleText.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
-        titleText.setText("placeholder title");
         titleText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 titleTextActionPerformed(evt);
@@ -171,7 +169,6 @@ public class AddTask extends javax.swing.JFrame {
 
         dayText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         dayText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        dayText.setText("26");
         dayText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dayTextActionPerformed(evt);
@@ -182,7 +179,6 @@ public class AddTask extends javax.swing.JFrame {
 
         monthText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         monthText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        monthText.setText("09");
         monthText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 monthTextActionPerformed(evt);
@@ -377,7 +373,7 @@ public class AddTask extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel MainTitle;
     private javax.swing.JLabel PriorityLabel;
-    private javax.swing.JComboBox<Priority> PrioritySelection;
+    private javax.swing.JComboBox<String> PrioritySelection;
     private javax.swing.JButton addTaskButton;
     private javax.swing.JLabel backgroundPNG;
     private javax.swing.JLabel colonLabel;

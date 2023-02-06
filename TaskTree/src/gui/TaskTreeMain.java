@@ -352,7 +352,8 @@ public class TaskTreeMain extends javax.swing.JFrame {
     }//GEN-LAST:event_changeToCurrentButtonActionPerformed
 
     private void openCurrentButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openCurrentButton2ActionPerformed
-        // TODO add your handling code here:
+        AddTask window = new AddTask();
+        window.show();
     }//GEN-LAST:event_openCurrentButton2ActionPerformed
 
     /**
