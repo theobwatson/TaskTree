@@ -82,7 +82,23 @@ public class Task implements Comparable<Task> {
 
     @Override
     public int compareTo(Task o) {
-        return this.getPriority().numerical.compareTo(o.getPriority().numerical);
+        int comparison = 0;
+        
+        if(this.getPriority().numerical.compareTo(o.getPriority().numerical) > 0
+                && this.due.before(o.due)){
+            comparison = 1;
+        } else if (this.getPriority().numerical.compareTo(o.getPriority().numerical) < 0
+                && this.due.after(o.due)){
+            comparison = -1;
+        } else if (this.getPriority().numerical.compareTo(o.getPriority().numerical) > 0
+                && this.due.before(o.due)){
+            comparison = -1;
+        } else if (this.getPriority().numerical.compareTo(o.getPriority().numerical) < 0
+                && this.due.equals(o.due) || this.due.after(o.due)){
+            comparison = 1;
+        }
+        
+        return comparison;
     }
 
     public int compareToTitle(Task o) {
