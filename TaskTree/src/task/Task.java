@@ -1,4 +1,4 @@
-package classes;
+package task;
 
 import java.util.Date;
 import enums.TaskStatus;
@@ -85,16 +85,16 @@ public class Task implements Comparable<Task> {
         int comparison = 0;
         
         if(this.getPriority().numerical.compareTo(o.getPriority().numerical) > 0
-                && this.due.before(o.due)){
+                && this.getDue().before(o.getDue())){
             comparison = 1;
         } else if (this.getPriority().numerical.compareTo(o.getPriority().numerical) < 0
-                && this.due.after(o.due)){
+                && this.getDue().after(o.getDue())){
             comparison = -1;
         } else if (this.getPriority().numerical.compareTo(o.getPriority().numerical) > 0
-                && this.due.before(o.due)){
+                && this.getDue().before(o.getDue())){
             comparison = -1;
         } else if (this.getPriority().numerical.compareTo(o.getPriority().numerical) < 0
-                && this.due.equals(o.due) || this.due.after(o.due)){
+                && this.getDue().equals(o.getDue()) || this.getDue().after(o.getDue())){
             comparison = 1;
         }
         
@@ -105,13 +105,6 @@ public class Task implements Comparable<Task> {
         return this.title.compareTo(o.title);
     }
 
-    public void setDueDate(int year, int month, int day) {
-
-    }
-
-    public void setDueDate(int year, int month, int day, int hrs, int mins) {
-
-    }
     
     public String toString(){
         return title + "";

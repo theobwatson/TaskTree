@@ -1,4 +1,4 @@
-package classes;
+package task;
 
 import enums.Priority;
 import enums.UserLevel;

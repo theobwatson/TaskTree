@@ -13,12 +13,12 @@ import javax.swing.JLabel;
  *
  * @author theobenvie-watson
  */
-public class NamePanel extends javax.swing.JFrame {
+public class Name extends javax.swing.JFrame {
 
     /**
      * Creates new form Home
      */
-    public NamePanel() {
+    public Name() {
         initComponents();
     }
 
@@ -108,7 +108,7 @@ public class NamePanel extends javax.swing.JFrame {
         String name = nameSubmission.getText();
 
         if (!name.isEmpty()) {
-            TaskTreeMain mainScreen = new TaskTreeMain(name);
+            Home mainScreen = new Home(name);
             mainScreen.show();
             dispose();
         } else {
@@ -133,22 +133,24 @@ public class NamePanel extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NamePanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Name.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NamePanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Name.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NamePanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Name.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NamePanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Name.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NamePanel().setVisible(true);
-                new NamePanel().setResizable(false);
+                new Name().setVisible(true);
+                new Name().setResizable(false);
             }
         });
     }

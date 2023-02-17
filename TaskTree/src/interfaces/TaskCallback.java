@@ -1,6 +1,6 @@
 package interfaces;
 
-import classes.Task;
+import task.Task;
 
 public interface TaskCallback {
     void onTaskCreated(Task task);

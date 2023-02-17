@@ -1,4 +1,4 @@
-package classes;
+package task;
 
 import enums.Priority;
 import java.util.ArrayList;
@@ -11,8 +11,8 @@ public class TaskTree {
     public User user;
 
     public TaskTree(String name) {
-        this.completed = new ArrayList<Task>();
-        this.tree = new ArrayList<Task>();
+        this.completed = new ArrayList<>();
+        this.tree = new ArrayList<>();
         this.user = new User(name);
     }
 

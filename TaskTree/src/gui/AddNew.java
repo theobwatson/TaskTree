@@ -4,20 +4,18 @@
  */
 package gui;
 
-import classes.Task;
-import classes.TaskTree;
+import task.Task;
 import enums.Priority;
 import interfaces.TaskCallback;
 import java.util.Date;
-import javax.swing.JComboBox;
-import manipulations.DateVerification;
-import manipulations.DateTimeConverter;
+import date.DateVerification;
+import date.DateTimeConverter;
 
 /**
  *
  * @author theobenvie-watson
  */
-public class AddTask extends javax.swing.JFrame {
+public class AddNew extends javax.swing.JFrame {
 
     String title;
     String description;
@@ -25,12 +23,12 @@ public class AddTask extends javax.swing.JFrame {
     Priority selectedPriority;
     private TaskCallback callback;
 
-    public AddTask(TaskCallback callback) {
+    public AddNew(TaskCallback callback) {
         initComponents();
         this.callback = callback;
     }
 
-    public AddTask() {
+    public AddNew() {
         initComponents();
     }
 
@@ -101,6 +99,7 @@ public class AddTask extends javax.swing.JFrame {
         getContentPane().add(addTaskButton);
         addTaskButton.setBounds(20, 330, 710, 50);
 
+        PrioritySelection.setBackground(new java.awt.Color(255, 255, 255));
         PrioritySelection.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         PrioritySelection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Very High", "High", "Medium", "Low", "Very Low" }));
         PrioritySelection.setToolTipText("");
@@ -119,6 +118,7 @@ public class AddTask extends javax.swing.JFrame {
         getContentPane().add(slashDayLabel);
         slashDayLabel.setBounds(572, 100, 20, 20);
 
+        descriptionText.setBackground(new java.awt.Color(255, 255, 255));
         descriptionText.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         descriptionText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,6 +128,7 @@ public class AddTask extends javax.swing.JFrame {
         getContentPane().add(descriptionText);
         descriptionText.setBounds(28, 211, 460, 80);
 
+        yearText.setBackground(new java.awt.Color(255, 255, 255));
         yearText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         yearText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         yearText.addActionListener(new java.awt.event.ActionListener() {
@@ -138,6 +139,7 @@ public class AddTask extends javax.swing.JFrame {
         getContentPane().add(yearText);
         yearText.setBounds(660, 92, 60, 40);
 
+        minuteText.setBackground(new java.awt.Color(255, 255, 255));
         minuteText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         minuteText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         minuteText.addActionListener(new java.awt.event.ActionListener() {
@@ -148,6 +150,7 @@ public class AddTask extends javax.swing.JFrame {
         getContentPane().add(minuteText);
         minuteText.setBounds(450, 92, 50, 40);
 
+        hourText.setBackground(new java.awt.Color(255, 255, 255));
         hourText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         hourText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         hourText.addActionListener(new java.awt.event.ActionListener() {
@@ -158,6 +161,7 @@ public class AddTask extends javax.swing.JFrame {
         getContentPane().add(hourText);
         hourText.setBounds(380, 92, 50, 40);
 
+        titleText.setBackground(new java.awt.Color(255, 255, 255));
         titleText.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         titleText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,6 +171,7 @@ public class AddTask extends javax.swing.JFrame {
         getContentPane().add(titleText);
         titleText.setBounds(28, 92, 320, 40);
 
+        dayText.setBackground(new java.awt.Color(255, 255, 255));
         dayText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         dayText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         dayText.addActionListener(new java.awt.event.ActionListener() {
@@ -177,6 +182,7 @@ public class AddTask extends javax.swing.JFrame {
         getContentPane().add(dayText);
         dayText.setBounds(530, 92, 40, 40);
 
+        monthText.setBackground(new java.awt.Color(255, 255, 255));
         monthText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         monthText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         monthText.addActionListener(new java.awt.event.ActionListener() {
@@ -238,7 +244,7 @@ public class AddTask extends javax.swing.JFrame {
     }//GEN-LAST:event_hourTextActionPerformed
 
     private void yearTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearTextActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_yearTextActionPerformed
 
     private void dayTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayTextActionPerformed
@@ -253,23 +259,25 @@ public class AddTask extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_descriptionTextActionPerformed
 
-    
+
     private void PrioritySelectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrioritySelectionActionPerformed
-        this.selectedPriority = (Priority) PrioritySelection.getSelectedItem();
+
+        String selectedItem = String.valueOf(PrioritySelection.getSelectedItem());
+        selectedItem = selectedItem.toUpperCase();
+        this.selectedPriority = Priority.valueOf((String) selectedItem);
     }//GEN-LAST:event_PrioritySelectionActionPerformed
 
-    
-    public void setVariables(){
+    public void setVariables() {
         this.title = titleText.getText();
         this.description = descriptionText.getText();
-        Date set = DateTimeConverter.stringToDate(dayText.getText() + "/" +
-                monthText.getText() + "/" + yearText.getText() + " " +
-                hourText.getText() + ":" +
-                minuteText.getText());
+        Date set = DateTimeConverter.stringToDate(dayText.getText() + "/"
+                + monthText.getText() + "/" + yearText.getText() + " "
+                + hourText.getText() + ":"
+                + minuteText.getText());
         this.dueDay = set;
     }
-    
-    private void addTaskButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+
+    public void addTaskButtonActionPerformed(java.awt.event.ActionEvent evt) {
 
         if (checkInputs().isEmpty()) {
             setVariables();
@@ -279,12 +287,12 @@ public class AddTask extends javax.swing.JFrame {
             callback.onTaskCreated(toAdd);
             dispose();
         }
-        
-        AddError window = new AddError();
+
+        Errors window = new Errors(checkInputs());
         window.show();
         clearTextFields();
-    } 
-    
+    }
+
     public void clearTextFields() {
         minuteText.setText("");
         titleText.setText("");
@@ -320,16 +328,26 @@ public class AddTask extends javax.swing.JFrame {
             errors += "Description field is empty.\n";
         }
 
-        int hour = Integer.parseInt(hourText.getText());
-        int minute = Integer.parseInt(minuteText.getText());
-        int year = Integer.parseInt(yearText.getText());
-        int month = Integer.parseInt(monthText.getText());
-        int day = Integer.parseInt(dayText.getText());
+        try {
+            
+            int hour = Integer.parseInt(hourText.getText());
+            int minute = Integer.parseInt(minuteText.getText());
+            int year = Integer.parseInt(yearText.getText());
+            int month = Integer.parseInt(monthText.getText());
+            int day = Integer.parseInt(dayText.getText());
 
-        DateVerification dateVerification = new DateVerification(hour, minute, year, month, day);
-        String dateErrors = dateVerification.validate();
-        if (!dateErrors.isEmpty()) {
-            errors += dateErrors;
+            DateVerification dateVerification = new DateVerification(hour, minute, year, month, day);
+            String dateErrors = dateVerification.validate();
+
+            if (dateErrors != null) {
+                errors += dateErrors;
+            }
+
+            return errors;
+
+        } catch (NumberFormatException e) {
+
+            errors += "Non-integer entered.\n";
         }
 
         return errors;
@@ -352,20 +370,21 @@ public class AddTask extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddTask.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddNew.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddTask.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddNew.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddTask.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddNew.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddTask.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddNew.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddTask().setVisible(true);
+                new AddNew().setVisible(true);
             }
         });
     }

@@ -1,10 +1,11 @@
-package manipulations;
+package date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * This class provides methods for converting a string into a date and time object.
+ * This class provides methods for converting a string into a date and time object,
+ * and for converting a date and time object into a string.
  */
 public class DateTimeConverter {
 
@@ -21,5 +22,19 @@ public class DateTimeConverter {
         } catch (ParseException e) {
             return null;
         }
+    }
+    
+    /**
+     * Converts a Date object into a string, using the format "dd/MM/yyyy HH:mm".
+     *
+     * @param date The Date object to be converted into a string.
+     * @return The string representation of the Date object, or an empty string if the Date object is null.
+     */
+    public String dateToString(Date date) {
+        if (date == null) {
+            return "";
+        }
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        return format.format(date);
     }
 }
