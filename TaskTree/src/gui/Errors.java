@@ -1,7 +1,6 @@
 package gui;
 
 import javax.swing.JTextArea;
-import interfaces.TaskCallback;
 
 /**
  *
@@ -15,6 +14,7 @@ public class Errors extends javax.swing.JFrame {
         
         Errors.errors = errors;
         initComponents();
+        showErrorsArea.setText(errors);
     }
     
     public Errors(){
@@ -25,36 +25,45 @@ public class Errors extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        treeLogo = new javax.swing.JLabel();
         titleText = new javax.swing.JLabel();
         errorScrollPane = new javax.swing.JScrollPane();
-        showErrorsArea = new javax.swing.JTextArea(errors);
+        showErrorsArea = new javax.swing.JTextArea();
         tryAgainButton = new javax.swing.JButton();
         backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(330, 230));
-        setPreferredSize(new java.awt.Dimension(330, 230));
+        setMinimumSize(new java.awt.Dimension(540, 351));
+        setPreferredSize(new java.awt.Dimension(540, 351));
         setResizable(false);
-        setSize(new java.awt.Dimension(330, 230));
+        setSize(new java.awt.Dimension(540, 351));
         getContentPane().setLayout(null);
 
-        titleText.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
+        treeLogo.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        treeLogo.setForeground(new java.awt.Color(255, 255, 255));
+        treeLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        treeLogo.setText("TaskTree");
+        getContentPane().add(treeLogo);
+        treeLogo.setBounds(0, 1, 190, 30);
+
+        titleText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         titleText.setForeground(new java.awt.Color(255, 255, 255));
-        titleText.setText("Uh oh...");
+        titleText.setText("Errors were found...");
         getContentPane().add(titleText);
-        titleText.setBounds(140, 50, 90, 15);
+        titleText.setBounds(80, 51, 230, 30);
+
+        errorScrollPane.setBorder(null);
 
         showErrorsArea.setEditable(false);
-        showErrorsArea.setBackground(new java.awt.Color(255, 255, 255));
-        showErrorsArea.setColumns(1);
-        showErrorsArea.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
-        showErrorsArea.setRows(20);
+        showErrorsArea.setBackground(new java.awt.Color(244, 236, 214));
+        showErrorsArea.setColumns(20);
+        showErrorsArea.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         errorScrollPane.setViewportView(showErrorsArea);
 
         getContentPane().add(errorScrollPane);
-        errorScrollPane.setBounds(60, 70, 220, 80);
+        errorScrollPane.setBounds(77, 95, 360, 170);
 
-        tryAgainButton.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
+        tryAgainButton.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         tryAgainButton.setForeground(new java.awt.Color(255, 255, 255));
         tryAgainButton.setText("Try Again");
         tryAgainButton.setContentAreaFilled(false);
@@ -64,12 +73,12 @@ public class Errors extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tryAgainButton);
-        tryAgainButton.setBounds(98, 163, 150, 20);
+        tryAgainButton.setBounds(140, 270, 230, 30);
 
-        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/miniBackground.png"))); // NOI18N
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Untitled (1).png"))); // NOI18N
         backgroundImage.setText("jLabel1");
         getContentPane().add(backgroundImage);
-        backgroundImage.setBounds(0, 0, 330, 230);
+        backgroundImage.setBounds(0, 0, 510, 350);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -119,6 +128,7 @@ public class Errors extends javax.swing.JFrame {
     private javax.swing.JScrollPane errorScrollPane;
     private javax.swing.JTextArea showErrorsArea;
     private javax.swing.JLabel titleText;
+    private javax.swing.JLabel treeLogo;
     private javax.swing.JButton tryAgainButton;
     // End of variables declaration//GEN-END:variables
 }

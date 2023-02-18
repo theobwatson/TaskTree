@@ -201,13 +201,13 @@ public class AddNew extends javax.swing.JFrame {
 
         dateLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         dateLabel.setForeground(new java.awt.Color(255, 255, 255));
-        dateLabel.setText("Date:");
+        dateLabel.setText("Due Date:");
         getContentPane().add(dateLabel);
         dateLabel.setBounds(535, 60, 140, 20);
 
         timeLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         timeLabel.setForeground(new java.awt.Color(255, 255, 255));
-        timeLabel.setText("Time:");
+        timeLabel.setText("Due Time:");
         getContentPane().add(timeLabel);
         timeLabel.setBounds(390, 60, 110, 20);
 
@@ -264,6 +264,7 @@ public class AddNew extends javax.swing.JFrame {
 
         String selectedItem = String.valueOf(PrioritySelection.getSelectedItem());
         selectedItem = selectedItem.toUpperCase();
+        selectedItem = selectedItem.replace(" ", "");
         this.selectedPriority = Priority.valueOf((String) selectedItem);
     }//GEN-LAST:event_PrioritySelectionActionPerformed
 
@@ -286,11 +287,12 @@ public class AddNew extends javax.swing.JFrame {
             toAdd.setDescription(description);
             callback.onTaskCreated(toAdd);
             dispose();
-        }
+        } else {
 
-        Errors window = new Errors(checkInputs());
-        window.show();
-        clearTextFields();
+            Errors window = new Errors(checkInputs());
+            window.show();
+            clearTextFields();
+        }
     }
 
     public void clearTextFields() {
@@ -329,7 +331,7 @@ public class AddNew extends javax.swing.JFrame {
         }
 
         try {
-            
+
             int hour = Integer.parseInt(hourText.getText());
             int minute = Integer.parseInt(minuteText.getText());
             int year = Integer.parseInt(yearText.getText());

@@ -1,13 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package gui;
-
-import java.awt.FlowLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
 
 /**
  *
@@ -31,56 +22,25 @@ public class Name extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        continueButton = new javax.swing.JButton();
+        nameError = new javax.swing.JLabel();
         frameTitle = new javax.swing.JLabel();
         versionNo = new javax.swing.JLabel();
-        nameError = new javax.swing.JLabel();
+        welcomeText = new javax.swing.JLabel();
         namePrompt = new javax.swing.JLabel();
         nameSubmission = new javax.swing.JTextField();
-        continueButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TaskTree");
         setForeground(new java.awt.Color(255, 255, 255));
         setLocation(new java.awt.Point(500, 500));
-        setMinimumSize(new java.awt.Dimension(340, 257));
+        setMinimumSize(new java.awt.Dimension(514, 350));
         setResizable(false);
+        setSize(new java.awt.Dimension(514, 350));
         getContentPane().setLayout(null);
 
-        frameTitle.setBackground(new java.awt.Color(255, 255, 255));
-        frameTitle.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        frameTitle.setForeground(new java.awt.Color(255, 255, 255));
-        frameTitle.setText("TaskTree");
-        getContentPane().add(frameTitle);
-        frameTitle.setBounds(10, 0, 100, 30);
-
-        versionNo.setForeground(new java.awt.Color(255, 255, 255));
-        versionNo.setText("v1.0");
-        getContentPane().add(versionNo);
-        versionNo.setBounds(300, 210, 30, 17);
-
-        nameError.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
-        nameError.setForeground(new java.awt.Color(255, 255, 255));
-        nameError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(nameError);
-        nameError.setBounds(50, 140, 240, 20);
-
-        namePrompt.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
-        namePrompt.setForeground(new java.awt.Color(255, 255, 255));
-        namePrompt.setText("What is your name?");
-        getContentPane().add(namePrompt);
-        namePrompt.setBounds(100, 80, 144, 15);
-
-        nameSubmission.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        nameSubmission.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameSubmissionActionPerformed(evt);
-            }
-        });
-        getContentPane().add(nameSubmission);
-        nameSubmission.setBounds(70, 110, 195, 30);
-
-        continueButton.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
+        continueButton.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         continueButton.setForeground(new java.awt.Color(255, 255, 255));
         continueButton.setText("Continue");
         continueButton.setContentAreaFilled(false);
@@ -90,12 +50,54 @@ public class Name extends javax.swing.JFrame {
             }
         });
         getContentPane().add(continueButton);
-        continueButton.setBounds(100, 170, 140, 10);
+        continueButton.setBounds(140, 270, 230, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/nameTemplate.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 340, 230);
+        nameError.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
+        nameError.setForeground(new java.awt.Color(153, 0, 0));
+        nameError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(nameError);
+        nameError.setBounds(112, 230, 290, 30);
+
+        frameTitle.setBackground(new java.awt.Color(255, 255, 255));
+        frameTitle.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        frameTitle.setForeground(new java.awt.Color(255, 255, 255));
+        frameTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        frameTitle.setText("TaskTree");
+        getContentPane().add(frameTitle);
+        frameTitle.setBounds(0, 0, 190, 30);
+
+        versionNo.setForeground(new java.awt.Color(255, 255, 255));
+        versionNo.setText("v1.0");
+        getContentPane().add(versionNo);
+        versionNo.setBounds(0, 330, 30, 17);
+
+        welcomeText.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        welcomeText.setForeground(new java.awt.Color(255, 255, 255));
+        welcomeText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        welcomeText.setText("Welcome!");
+        getContentPane().add(welcomeText);
+        welcomeText.setBounds(60, 50, 250, 30);
+
+        namePrompt.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        namePrompt.setForeground(new java.awt.Color(255, 255, 255));
+        namePrompt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        namePrompt.setText("What is your name?");
+        getContentPane().add(namePrompt);
+        namePrompt.setBounds(140, 120, 230, 30);
+
+        nameSubmission.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        nameSubmission.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nameSubmission.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameSubmissionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(nameSubmission);
+        nameSubmission.setBounds(110, 170, 290, 50);
+
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Untitled (1).png"))); // NOI18N
+        getContentPane().add(backgroundImage);
+        backgroundImage.setBounds(0, 0, 514, 350);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -105,13 +107,13 @@ public class Name extends javax.swing.JFrame {
     }//GEN-LAST:event_nameSubmissionActionPerformed
 
     private void continueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonActionPerformed
-        String name = nameSubmission.getText();
 
-        if (!name.isEmpty()) {
-            Home mainScreen = new Home(name);
+        if (!nameSubmission.getText().isEmpty()) {
+            Home mainScreen = new Home(nameSubmission.getText());
             mainScreen.show();
             dispose();
-        } else {
+        } else if (nameSubmission.getText().isEmpty()){
+            nameError.setVisible(true);
             nameError.setText("Please enter your name.");
         }
     }//GEN-LAST:event_continueButtonActionPerformed
@@ -156,12 +158,13 @@ public class Name extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel backgroundImage;
     private javax.swing.JButton continueButton;
     private javax.swing.JLabel frameTitle;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel nameError;
     private javax.swing.JLabel namePrompt;
     private javax.swing.JTextField nameSubmission;
     private javax.swing.JLabel versionNo;
+    private javax.swing.JLabel welcomeText;
     // End of variables declaration//GEN-END:variables
 }

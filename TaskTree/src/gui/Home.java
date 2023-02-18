@@ -37,19 +37,20 @@ public class Home extends javax.swing.JFrame implements TaskCallback {
         upNext = new javax.swing.JLabel();
         helpButton = new javax.swing.JButton();
         TaskHistoryButton = new javax.swing.JButton();
+        displayDue = new javax.swing.JLabel();
         dueLabel = new javax.swing.JLabel();
         nextTitle = new javax.swing.JLabel();
         displayRanking = new javax.swing.JLabel();
         viewAllButton = new javax.swing.JButton();
         deleteCurrentButton = new javax.swing.JButton();
-        displayDue = new javax.swing.JLabel();
+        descriptionScroll = new javax.swing.JScrollPane();
+        currentDescription = new javax.swing.JTextArea();
         nextDescription = new javax.swing.JLabel();
         addNewButton = new javax.swing.JButton();
         markCompletedButton = new javax.swing.JButton();
         changeToCurrentButton = new javax.swing.JButton();
         editCurrentButton = new javax.swing.JButton();
         openCurrentButton = new javax.swing.JButton();
-        currentDescription = new javax.swing.JLabel();
         currentTitle = new javax.swing.JLabel();
         MainTitle = new javax.swing.JLabel();
         currentTask = new javax.swing.JLabel();
@@ -92,12 +93,12 @@ public class Home extends javax.swing.JFrame implements TaskCallback {
         getContentPane().add(upNext);
         upNext.setBounds(210, 271, 140, 40);
 
-        helpButton.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        helpButton.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         helpButton.setForeground(new java.awt.Color(255, 255, 255));
         helpButton.setText("?");
         helpButton.setContentAreaFilled(false);
         getContentPane().add(helpButton);
-        helpButton.setBounds(130, 510, 30, 30);
+        helpButton.setBounds(129, 510, 30, 30);
 
         TaskHistoryButton.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         TaskHistoryButton.setForeground(new java.awt.Color(167, 202, 177));
@@ -105,6 +106,13 @@ public class Home extends javax.swing.JFrame implements TaskCallback {
         TaskHistoryButton.setContentAreaFilled(false);
         getContentPane().add(TaskHistoryButton);
         TaskHistoryButton.setBounds(10, 424, 150, 30);
+
+        displayDue.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        displayDue.setForeground(new java.awt.Color(255, 255, 255));
+        displayDue.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        displayDue.setText("[Due date]");
+        getContentPane().add(displayDue);
+        displayDue.setBounds(690, 70, 110, 21);
 
         dueLabel.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         dueLabel.setForeground(new java.awt.Color(49, 10, 49));
@@ -153,12 +161,19 @@ public class Home extends javax.swing.JFrame implements TaskCallback {
         getContentPane().add(deleteCurrentButton);
         deleteCurrentButton.setBounds(730, 190, 90, 30);
 
-        displayDue.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        displayDue.setForeground(new java.awt.Color(255, 255, 255));
-        displayDue.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        displayDue.setText("[Due date]");
-        getContentPane().add(displayDue);
-        displayDue.setBounds(690, 70, 110, 21);
+        descriptionScroll.setBorder(null);
+        descriptionScroll.setToolTipText("");
+
+        currentDescription.setEditable(false);
+        currentDescription.setBackground(new java.awt.Color(244, 236, 214));
+        currentDescription.setColumns(1);
+        currentDescription.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        currentDescription.setForeground(new java.awt.Color(51, 51, 51));
+        currentDescription.setBorder(null);
+        descriptionScroll.setViewportView(currentDescription);
+
+        getContentPane().add(descriptionScroll);
+        descriptionScroll.setBounds(230, 120, 580, 50);
 
         nextDescription.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         nextDescription.setForeground(new java.awt.Color(102, 102, 102));
@@ -240,17 +255,6 @@ public class Home extends javax.swing.JFrame implements TaskCallback {
         getContentPane().add(openCurrentButton);
         openCurrentButton.setBounds(510, 190, 100, 30);
 
-        currentDescription.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
-        currentDescription.setForeground(new java.awt.Color(102, 102, 102));
-        currentDescription.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        currentDescription.setText("[Description]");
-        currentDescription.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        currentDescription.setIconTextGap(0);
-        currentDescription.setIgnoreRepaint(true);
-        currentDescription.setMaximumSize(new java.awt.Dimension(141, 21));
-        getContentPane().add(currentDescription);
-        currentDescription.setBounds(230, 120, 580, 50);
-
         currentTitle.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         currentTitle.setForeground(new java.awt.Color(102, 102, 102));
         currentTitle.setText("[Task Title]");
@@ -278,9 +282,9 @@ public class Home extends javax.swing.JFrame implements TaskCallback {
 
         version.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
         version.setForeground(new java.awt.Color(153, 153, 255));
-        version.setText("v1.0");
+        version.setText("v0.0.1");
         getContentPane().add(version);
-        version.setBounds(810, 530, 42, 17);
+        version.setBounds(792, 530, 60, 17);
 
         WelcomeText.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         WelcomeText.setForeground(new java.awt.Color(255, 255, 255));
@@ -352,14 +356,14 @@ public class Home extends javax.swing.JFrame implements TaskCallback {
 
     private void setCurrent() {
         this.currentTitle.setText(current.getTitle());
-        this.currentDescription.setText(current.getDescription() + "Priority: "
+        this.currentDescription.setText(current.getDescription() + "\nPriority: "
                 + current.getPriority());
 
         DateTimeConverter format = new DateTimeConverter();
 
         String formattedDate = format.dateToString(current.getDue());
 
-        this.displayDue.setText(formattedDate);
+        this.displayDue.setText(formattedDate + "");
     }
 
     private void nullCurrentTask() {
@@ -424,10 +428,11 @@ public class Home extends javax.swing.JFrame implements TaskCallback {
     private javax.swing.JLabel WelcomeText;
     private javax.swing.JButton addNewButton;
     private javax.swing.JButton changeToCurrentButton;
-    private javax.swing.JLabel currentDescription;
+    private javax.swing.JTextArea currentDescription;
     private javax.swing.JLabel currentTask;
     private javax.swing.JLabel currentTitle;
     private javax.swing.JButton deleteCurrentButton;
+    private javax.swing.JScrollPane descriptionScroll;
     private javax.swing.JLabel displayDue;
     private javax.swing.JLabel displayLeaves;
     private javax.swing.JLabel displayRanking;
